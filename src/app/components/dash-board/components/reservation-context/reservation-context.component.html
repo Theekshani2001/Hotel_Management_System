@@ -1,0 +1,33 @@
+<router-outlet></router-outlet>
+<div class="outer">
+  <h1 class="header-text">Reservation Management</h1>
+  <hr>
+  <mat-tab-group>
+    <mat-tab label="Make Reservation">
+      <div class="content-wrap">
+        <app-make-reservation></app-make-reservation>
+      </div>
+    </mat-tab>
+    <mat-tab label="Update Reservation">
+      <div class="content-wrap">
+        <app-update-reservation></app-update-reservation>
+      </div>
+    </mat-tab>
+    <mat-tab label="Delete Reservation">
+      <div class="content-wrap">
+        <app-delete-reservation></app-delete-reservation>
+      </div>
+    </mat-tab>
+    <mat-tab label="See Reservation">
+      <div class="content-wrap">
+        <app-see-reservation></app-see-reservation>
+      </div>
+    </mat-tab>
+    <mat-tab label="See All Reservations">
+      <div class="content-wrap">
+        <app-see-reservations></app-see-reservations>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+
+</div>

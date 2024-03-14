@@ -1,0 +1,34 @@
+<router-outlet></router-outlet>
+<div class="outer">
+  <h1 class="header-text">Room Management</h1>
+  <hr>
+  <mat-tab-group>
+    <mat-tab label="Save Room">
+      <div class="content-wrap">
+        <app-save-room></app-save-room>
+      </div>
+    </mat-tab>
+    <mat-tab label="Update Room">
+      <div class="content-wrap">
+        <app-update-room></app-update-room>
+      </div>
+    </mat-tab>
+    <mat-tab label="Delete Room">
+      <div class="content-wrap">
+        <app-delete-room></app-delete-room>
+      </div>
+    </mat-tab>
+    <mat-tab label="See Room">
+      <div class="content-wrap">
+        <app-see-room></app-see-room>
+      </div>
+    </mat-tab>
+    <mat-tab label="See All Rooms">
+      <div class="content-wrap">
+        <app-see-rooms></app-see-rooms>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+
+</div>
+

@@ -1,0 +1,61 @@
+<form [formGroup]="reservationForm" (ngSubmit)="uploadData()">
+  <div class="mb-3 col-4">
+    <mat-form-field class="full-width">
+      <mat-label>Reservation Id</mat-label>
+      <input formControlName="id" matInput placeholder="C-001" type="text">
+      <mat-error>Reservation id is required..</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="mb-3 col-4">
+    <mat-form-field class="full-width">
+      <mat-label>Customer Name</mat-label>
+      <input formControlName="name" matInput placeholder="Nimal" type="text">
+      <mat-error>Customer Name is required..</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="mb-3  col-4">
+    <mat-form-field class="full-width">
+      <mat-label>Customer Address</mat-label>
+      <textarea formControlName="address" matInput placeholder="No30, Flower Street, Galle" type="text"></textarea>
+      <mat-error>Customer Address is required..</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="mb-3  col-4">
+    <mat-form-field class="full-width">
+      <mat-label>Customer Contact No</mat-label>
+      <input formControlName="contact" matInput placeholder="+94 782598741" type="text">
+      <mat-error>Customer Contact is required..</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="mb-3 col-4">
+    <mat-form-field appearance="fill">
+      <mat-label>Choose a Check in date</mat-label>
+      <input formControlName="checkin" matInput [matDatepicker]="picker" type="date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error>Check in date is required..</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="mb-3 col-4">
+    <mat-form-field appearance="fill">
+      <mat-label>Choose a Check out date</mat-label>
+      <input formControlName="checkout" matInput [matDatepicker]="picker1" type="date">
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+      <mat-error>Check out date is required..</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="mb-3 col-4">
+    <mat-form-field appearance="fill" >
+      <mat-label>Number of visitors</mat-label>
+      <input formControlName="visitors" matInput type="number" placeholder="Ex. 12" type="number" min="1">
+      <span matSuffix></span>
+      <mat-error>Min size: 1</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="mb-3">
+    <button [disabled]="reservationForm.invalid" mat-raised-button color="primary" type="submit">Update Reservation</button>
+  </div>
+</form>
+
+

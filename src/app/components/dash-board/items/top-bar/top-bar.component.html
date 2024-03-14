@@ -1,0 +1,60 @@
+<div class="main-wrap">
+
+  <div class="business-name-outer">
+    <mat-icon style="color: white" aria-hidden="false" aria-label="Example home icon">home</mat-icon>&nbsp;&nbsp;
+    <h2>QUEENSBURY</h2>
+  </div>
+  <div class="ham-wrap" (click)="toggleSlider()">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+  <div class="menu-outer">
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>dialpad</mat-icon>
+        <span>Redial</span>
+      </button>
+      <button mat-menu-item disabled>
+        <mat-icon>voicemail</mat-icon>
+        <span>Check voice mail</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Disable alerts</span>
+      </button>
+    </mat-menu>
+
+  </div>
+</div>
+<div class="left-slider" *ngIf="sliderState" [@leftSlider]>
+
+  <ul class="nav-wrap">
+    <li>
+      <a routerLink="/dashboard/reservation-context">Reservation Management</a>
+    </li>
+    <li>
+      <a routerLink="/dashboard/place-order">Booking Details</a>
+    </li>
+    <li>
+      <a routerLink="/dashboard/room-context">Room Management</a>
+    </li>
+    <li>
+      <a routerLink="/dashboard/customer-context">Customer Management</a>
+    </li>
+    <li>
+      <a routerLink="/dashboard/feedback-context">Feedback Management</a>
+    </li>
+
+  </ul>
+  <div class="crown-icon-wrap">
+    <i class="fas fa-crown"></i>
+  </div>
+  <h3 class="crown-topic">
+    QUEENSBURY
+  </h3>
+
+</div>

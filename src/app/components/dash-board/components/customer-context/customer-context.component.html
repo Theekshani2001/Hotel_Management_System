@@ -1,0 +1,30 @@
+<router-outlet></router-outlet>
+<div class="outer">
+  <h1 class="header-text">Customer Management</h1>
+  <hr>
+  <mat-tab-group>
+    <mat-tab label="Save Customer">
+      <div class="content-wrap">
+        <app-save-customer></app-save-customer>
+      </div>
+    </mat-tab>
+    <mat-tab label="Update Customer">
+      <div class="content-wrap">
+        <app-update-customer></app-update-customer>
+      </div>
+    </mat-tab>
+    <mat-tab label="Delete Customer">
+      <div class="content-wrap">
+        <app-delete-customer></app-delete-customer>
+      </div>
+    </mat-tab>
+    <mat-tab label="See All Customers">
+      <div class="content-wrap">
+        <app-see-customers></app-see-customers>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+
+</div>
+
+

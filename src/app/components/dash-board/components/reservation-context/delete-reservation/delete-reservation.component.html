@@ -1,0 +1,13 @@
+<form [formGroup]="reservationForm" (ngSubmit)="uploadData()">
+  <div class="mb-3 col-4">
+    <mat-form-field class="full-width">
+      <mat-label>Reservation Id</mat-label>
+      <input formControlName="id" matInput placeholder="C-001" type="text">
+      <mat-error>Reservation id is required..</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="mb-3">
+    <button [disabled]="reservationForm.invalid" mat-raised-button color="primary" type="submit">Delete Reservation</button>
+  </div>
+</form>
+

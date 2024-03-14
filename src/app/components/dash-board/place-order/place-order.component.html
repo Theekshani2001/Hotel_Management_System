@@ -1,0 +1,97 @@
+<h1 class="booking-title">BOOKING DETAILS FORM</h1>
+<div class="line">
+  <hr>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <label for="cId" class="form-label">Reservation Id</label>
+      <select id="cId" class="form-control" #reservationIdElement
+              (change)="setReservation(reservationIdElement.value)">
+        <option *ngFor="let tempReservations of allReservation"
+                value="{{tempReservations.id}}">{{tempReservations.id}}</option>
+      </select>
+    </div>
+    <div class="col-3">
+      <label for="cName" class="form-label">Customer Name</label>
+      <input type="text" value="{{selectedReservation?.name}}" id="cName" class="form-control"/>
+    </div>
+    <div class="col-3">
+      <label for="cAddress" class="form-label">Customer Address</label>
+      <input type="text" value="{{selectedReservation?.address}}" id="cAddress" class="form-control"/>
+    </div>
+    <div class="col-3">
+      <label for="Checkin" class="form-label">Customer Check in</label>
+      <input type="text" [value]="selectedReservation?.checkin" id="Checkin" class="form-control"/>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-3">
+      <label for="code" class="form-label">Code</label>
+      <select id="code" class="form-control"
+              #roomIdElement
+              (change)="setRoom(roomIdElement.value)">
+        <option
+          *ngFor="let tempRoom of allRooms"
+          value="{{tempRoom?.code}}"
+        >{{tempRoom?.code}}</option>
+      </select>
+    </div>
+    <div class="col-3">
+      <label for="roomType" class="form-label">Room Type</label>
+      <input type="text" [value]="selectedRoom?.roomType"  id="roomType" class="form-control"/>
+    </div>
+    <div class="col-2">
+      <label for="availableQty" class="form-label">Available No of Rooms</label>
+      <input type="number" [value]="selectedRoom?.availableQty"  id="availableQty" class="form-control" min="1"/>
+    </div>
+    <div class="col-2">
+      <label for="unitPrice" class="form-label">Unit Price</label>
+      <input type="number" [value]="selectedRoom?.unitPrice"  id="unitPrice" class="form-control" min="1"/>
+    </div>
+    <div class="col-2">
+      <label for="requestedQTY" class="form-label">Requested No of Rooms</label>
+      <input type="number" #element (keyup.enter)="addToCart(element.value)" id="requestedQTY" class="form-control" min="1"/>
+    </div>
+  </div>
+  <hr>
+
+  <table class="table table-hover">
+    <tbody>
+    <tr>
+      <th>#</th>
+      <th>Code</th>
+      <th>Room Type</th>
+      <th>Unit Price</th>
+      <th>Requested No</th>
+      <th>Total</th>
+      <th>Option</th>
+    </tr>
+    </tbody>
+    <tbody>
+    <tr *ngFor="let tempCart of cart ; index as num ">
+      <td>{{num}}</td>
+      <td>{{tempCart?.code}}</td>
+      <td>{{tempCart?.roomType}}</td>
+      <td>{{tempCart?.unitPrice}}</td>
+      <td>{{tempCart?.requestedQTY}}</td>
+      <td>{{tempCart?.total}}</td>
+      <td>
+        <button class="btn btn-danger btn-sm" (click)="delete(num)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="bottom-bar">
+    <div class="left-side">
+      <h3 class="ttlCost">Total Cost : {{totalCost}}.0 $</h3>
+    </div>
+    <div class="right-side">
+      <button class="btn btn-primary btn-sm" (click)="placeOrder()">Make Booking</button>
+    </div>
+  </div>
+
+</div>
+
